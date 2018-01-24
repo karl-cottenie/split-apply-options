@@ -7,7 +7,7 @@ summary(serengeti.behaviours)
 ##This is how Nia and I decided to split up and summarise the data
 behaviour_species = split(serengeti[10:11], serengeti$Species)
 behaviour_species
-summary(behaviour_species[[1]])
+lapply(behaviour_species[1:10], summary)
 
 
 ### Pair: apply the plot function to the first 10 species
