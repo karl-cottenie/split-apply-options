@@ -98,42 +98,28 @@ serengeti.behaviours = serengeti[10:11] # a data frame/tibble is a list of colum
 summary(serengeti.behaviours)
 ### Pair: apply the summary function to each of the different species
 
-#Sally's homework
+#SJA homework
 
-#splitting serengeti.behaviours based upon species
 behav.split <- split(serengeti.behaviours, serengeti$Species)
-
-#checking the length of the new list
 length(behav.split)
-
-#verifying that the length of the new list matches the number of species
-#in the original dataset
 length(unique(serengeti$Species))
-
-#looking at behav.split
 behav.split
-
-#checking class
 class(behav.split)
-
-#generating summary 
 lapply(behav.split, summary)
 
-plot(serengeti.behaviours)
 
+plot(serengeti.behaviours)
 ### Pair: apply the plot function to the first 10 species
 ### Pair-intermediate: can you plot the species name as the title of the plot?
 
-
-#Sally's homework - checking the list created
+#checking the list created
 summary(behav.split[[1]]$Standing)
 names(behav.split)
 
 #setting up for a 10-panel figure
 par(mfrow = c(2, 5))
 
-#looping across the first 10 species to plot Standing against Resting
-#labeling each panel with the species name
+#looping across the first 10 species
 for (i in 1:10) {
   plot(behav.split[[i]], main = names(behav.split[i]))
 }
